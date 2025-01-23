@@ -1,4 +1,5 @@
 import java.io.*
+import java.util.ArrayDeque
 // import java.io.BufferReader
 // import java.io.File
 // import java.io.FileReader
@@ -10,7 +11,7 @@ fun main() {
 
     // N: 광고 지면 수, K: 목표 낙찰 지면 수
     var (N, K) = reader.readLine().split(" ").map { it.toInt() }
-    var count = 0
+    var count = N
     println("N: $N, K: $K")
 
     // Ai : MOLOCO가 제시한 입찰 가격 
@@ -21,19 +22,17 @@ fun main() {
     // val arr = MutableList<List<Int>>(N) {
     //     (reader.readLine().split(" ").map { it.toInt() }).toList()
     // }
+    val diffFee = mutableListOf<Int>()
 
-    val arr = Array(N) { reader.readLine().split(" ").map { it.toInt() }.toList() }
-
-    println(arr.contentToString())
-    while(N != 0){
-        arr.forEach { item -> 
-            if(item[0] > item[1]){
-                N--
-                // arr에서 해당 아이템을 pop하고
-                println(arr.contentToString())
-            }
-        }
-
+    // N개의 줄 입력 처리
+    repeat(N) {
+        val (currentFee, screenPrice) = reader.readLine()!!.split(" ").map { it.toInt() }
+        diffFee.add(screenPrice - currentFee)
     }
 
+    // 정렬 후 결과 출력
+    diffFee.sort()
+    println(diffFee)
+
+    println(maxOf(0, diffFee[K - 1]))
 }
