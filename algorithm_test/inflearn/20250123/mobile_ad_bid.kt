@@ -1,8 +1,21 @@
 import java.io.*
-import java.util.ArrayDeque
-// import java.io.BufferReader
-// import java.io.File
-// import java.io.FileReader
+
+/*
+백준 제출 방식..
+import java.util.*
+fun main(args:Array<String>) = with(Scanner(System.`in`)){
+    val (N, K) = readLine()!!.split(" ").map { it.toInt() }
+    val diffFee = mutableListOf<Int>()
+    
+    repeat(N){
+        val (currentFee, screenPrice) = readLine()!!.split(" ").map { it.toInt() }
+        diffFee.add(screenPrice - currentFee)
+    }
+    
+    diffFee.sort()
+    println(maxOf(0, diffFee[K-1]))
+}
+*/
 
 fun main() {
     // readln(), readLine()
