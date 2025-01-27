@@ -7,7 +7,6 @@ fun main() = with(File("input.txt").bufferedReader()){
     val N = readLine().toInt()
 
     if (N % 2 == 0){
-        println("CTY")
         println("CY")
     } else {
         println("SK")
