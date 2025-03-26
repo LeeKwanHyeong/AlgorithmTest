@@ -4,6 +4,10 @@ input = sys.stdin.readline
 
 N = int(input())
 
+if N == 1:
+    print(1)
+    sys.exit(0)
+
 a = 1
 b = 3
 
